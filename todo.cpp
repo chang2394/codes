@@ -1,4 +1,3 @@
-
 TWO POINTERS :
 
 http://codeforces.com/problemset/problem/229/D
