@@ -1,0 +1,18 @@
+
+TWO POINTERS :
+
+http://codeforces.com/problemset/problem/229/D
+http://codeforces.com/problemset/problem/14/D
+
+DP + TREES + DS:
+     
+http://www.spoj.com/problems/MTREE/
+http://codeforces.com/problemset/problem/337/D
+http://codeforces.com/problemset/problem/343/D
+http://codeforces.com/problemset/problem/371/D
+
+****Queries on trees*****
+
+SUFFIX ARRAY + LCP:
+
+http://www.codechef.com/DEC13/problems/DECORATE
