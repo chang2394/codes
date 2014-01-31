@@ -18,9 +18,9 @@ http://www.codechef.com/DEC13/problems/DECORATE
 
 HEAVY-LIGHT DECOMPOSITION OF TREE:
      
-	TO STUDY 
-     1.) http://wcipeg.com/wiki/Heavy-light_decomposition
-     2.) http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/lecture-videos/
-	
-	PROBLEMS
-	 http://discuss.codechef.com/tags/heavy-light/
+ TO STUDY 
+ 1.) http://wcipeg.com/wiki/Heavy-light_decomposition
+ 2.) http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/lecture-videos/
+		
+ PROBLEMS
+ http://discuss.codechef.com/tags/heavy-light/
