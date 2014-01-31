@@ -21,6 +21,7 @@ HEAVY-LIGHT DECOMPOSITION OF TREE:
  TO STUDY 
  1.) http://wcipeg.com/wiki/Heavy-light_decomposition
  2.) http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/lecture-videos/
-		
+ 3.) http://www.quora.com/How-do-I-understand-the-heavy-light-decomposition-of-a-tree
+ 
  PROBLEMS
  http://discuss.codechef.com/tags/heavy-light/
