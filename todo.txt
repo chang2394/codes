@@ -29,3 +29,4 @@ HEAVY-LIGHT DECOMPOSITION OF TREE:
 
 OTHER QUESTIONS 
   https://www.hackerrank.com/contests/101jan14/challenges/recalling-early-days-gp-with-trees
+  http://www.codechef.com/problems/SMHTD ............. spoj DOSA "http://stackoverflow.com/questions/21143236/minimum-changes-required-to-make-a-given-array-strictly-increasing"
