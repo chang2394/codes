@@ -1,4 +1,4 @@
-
 ******* http://www.comp.nus.edu.sg/~stevenha/myteaching/competitive_programming/cp1.pdf *********
 ******* http://www.prefield.com/algorithm/ ************
 ******* http://e-maxx.ru/ *****
+******* http://www.stanford.edu/class/cs97si/ ********
