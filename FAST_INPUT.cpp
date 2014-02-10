@@ -1,4 +1,3 @@
-
 inline void fi(int *a)
 {
     register char c = 0;
