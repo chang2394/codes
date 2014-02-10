@@ -1,4 +1,3 @@
-
 ill mod_power(ill a, ill b) {
     ill x = 1, y = a;
     while ( b > 0 ) {
