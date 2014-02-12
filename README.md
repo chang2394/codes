@@ -8,3 +8,4 @@ These are some useful LINKS.
 * [Stanford - Competitive Programming](http://www.stanford.edu/class/cs97si/)
 * [Peking University Judge](http://poj.org/pastcontests)
 * [Coursera - Game Theory](https://class.coursera.org/cgt-002/wiki/syllabus)
+* [Algorithm - Maths](http://www.cut-the-knot.org/probability.shtml)
