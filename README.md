@@ -7,4 +7,4 @@ These are some useful LINKS.
 * [E-MAXX](http://e-maxx.ru/)
 * [Stanford - Competitive Programming](http://www.stanford.edu/class/cs97si/)
 * [Peking University Judge](http://poj.org/pastcontests)
-* [Coursera - Combinatrics](https://class.coursera.org/cgt-002/wiki/syllabus)
+* [Coursera - Game Theory](https://class.coursera.org/cgt-002/wiki/syllabus)
