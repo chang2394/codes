@@ -9,3 +9,4 @@ These are some useful LINKS.
 * [Peking University Judge](http://poj.org/pastcontests)
 * [Coursera - Game Theory](https://class.coursera.org/cgt-002/wiki/syllabus)
 * [Algorithm - Maths](http://www.cut-the-knot.org/probability.shtml)
+* [Suffix Array](http://www.stanford.edu/class/cs97si/suffix-array.pdf)
