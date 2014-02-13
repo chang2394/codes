@@ -4,3 +4,4 @@
 ******* http://www.stanford.edu/class/cs97si/ ********
 ******* http://poj.org/pastcontests *********
 ******* https://class.coursera.org/cgt-002/wiki/syllabus *****
+******* http://www.stanford.edu/class/cs97si/suffix-array.pdf ********
