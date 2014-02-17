@@ -5,6 +5,7 @@
 using namespace std;
 
 // ****************** START OF CODE FOR TREAP (BIT + MAX HEAP) **********************
+
 struct Node{
     int key,cnt,priority;
     Node *left, *right;
