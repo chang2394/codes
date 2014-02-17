@@ -10,7 +10,7 @@ struct Node{
 
 struct Treap{
     Node *root;
-    Treap():root(NULL){ srand(time(NULL)); }
+    Treap():root(NULL){ /*srand(time(NULL));*/ }
 
     int Size(Node *T){
         return (T == NULL) ? 0 : T->cnt;
