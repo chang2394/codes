@@ -4,7 +4,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// ****************** START OF CODE FOR TREAP (BIT + MAX HEAP) **********************
+// ****************** START OF CODE FOR TREAP (BST + MAX HEAP) **********************
 
 struct Node{
     int key,cnt,priority;
@@ -129,7 +129,7 @@ struct Treap{
         return (FindK(root,k));
     }
 };
-// ******************* END OF CODE FOR TREAP (BIT + MAX HEAP) *********************
+// ******************* END OF CODE FOR TREAP (BST + MAX HEAP) *********************
 
 void solve(){
     char ch[100];
