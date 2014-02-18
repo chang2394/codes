@@ -1,3 +1,6 @@
+// To maintain duplicate elements maintain one more thing in Node (frequency) of that particular value.
+// :) :) :) :) :) 
+
 // ****************** START OF CODE FOR TREAP (BST + MAX HEAP) **********************
 
 struct Node{
