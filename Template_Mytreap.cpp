@@ -1,5 +1,5 @@
 // To maintain duplicate elements maintain one more thing in Node (frequency) of that particular value.
-// :) :) :) :) :) 
+// Code by Mr. BLACK :) 
 
 // ****************** START OF CODE FOR TREAP (BST + MAX HEAP) **********************
 
