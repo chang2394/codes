@@ -2,7 +2,7 @@
 // Code by Mr. BLACK :) 
 
 // ****************** START OF CODE FOR TREAP (BST + MAX HEAP) **********************
-// LNIK :- http://jariasf.wordpress.com/2012/02/27/arbol-de-busqueda-aleatorizado-treap/
+// LINK :- http://jariasf.wordpress.com/2012/02/27/arbol-de-busqueda-aleatorizado-treap/
 
 struct Node{
     int key,cnt,priority;
