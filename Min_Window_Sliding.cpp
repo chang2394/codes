@@ -1,5 +1,4 @@
-
-//LINK to Problem :- http://www.codechef.com/IGNS2014/problems/IGNUS14A
+//LINK to the Problem :- http://www.codechef.com/IGNS2014/problems/IGNUS14A
 
 #include <bits/stdc++.h>
 #define INF 1000000000
