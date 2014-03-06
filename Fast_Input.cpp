@@ -1,4 +1,4 @@
-// fast input
+//Code for FAST INPUT :)
 template <typename T>
 inline void fi(T *a)
 {
