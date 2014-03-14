@@ -1,207 +1,206 @@
-#include <iostream>
-#include <cstdio>
-#include <cstdlib>
-#include <algorithm>
-#include <cmath>
-#include <cstring>
-#include <string>
-#include <map>
-#include <set>
-#include <stack>
-#include <list>
-#include <vector>
-#include <queue>
+// LINK :- http://codeforces.com/contest/128/submission/867117
+
+#pragma warning(disable:4786)
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+#include<vector>
+#include<set>
+#include<map>
+#include<functional>
+#include<string>
+#include<cstring>
+#include<cstdlib>
+#include<queue>
+#include<utility>
+#include<fstream>
+#include<sstream>
+#include<cmath>
+#include<stack>
+#include<cstdio>
+#include<cassert>
+
 
 using namespace std;
 
-#define PI acos(-1)
+#define MEM(a,b) memset(a,(b),sizeof(a))
+#define MAX(a,b) ((a) > (b) ? (a) : (b))
+#define MIN(a,b)  ((a) < (b) ? (a) : (b))
+#define istr(S) istringstream sin(S)
 #define MP make_pair
-#define PB push_back
-#define VI vector <int>
-#define PII pair <int, int>
-#define LL long long
-#define SET(v,i) memset(v, i, sizeof(v))
-#define FOR(i,a,b) for (int i = (a); i <= (b); i++)
-#define FORD(i,a,b) for (int i = (a); i >= (b); i--)
-#define FORN(i,a,b) for (int i = (a); i < (b); i++)
-#define DOWN(i,a,b) for (int i = (a); i > (b); i--)
-#define FIT(it,v) for (typeof(v.begin()) it = v.begin(); it != v.end(); it++)
-#define FITD(it,v) for (typeof(v.rbegin()) it = v.rbegin(); it != v.rend(); it++)
-#define FREOPEN freopen("a.in", "r", stdin); freopen("a.out", "w", stdout)
+#define pb push_back
+#define inf 1000000000
 
-#define maxn 411111
+typedef pair<int,int> pi;
+typedef vector<int> vi;
+typedef vector<string> vs;
+typedef vector<double> vd;
+typedef vector<pi> vpi;
 
-struct element {
-	int u, v, i;
-};
+#define inf 1000000000
 
-char S[maxn], T1[maxn], T2[maxn];
-element a[maxn], b[maxn];
-int pos[maxn][20];
-int lcp[maxn], cnt[maxn];
-int N, N1, N2;
+//typedef long long  LL;
+typedef __int64 LL;
 
-void countingSort() {//use couting sort to reduce the complexity log(n) time
-	SET (cnt, 0);
-	FOR (i, 1, N) 
-		cnt[a[i].v] ++;
-		
-	FOR (i, 1, maxn - 1) cnt[i] += cnt[i - 1];
-	
-	FOR (i, 1, N) {
-		b[cnt[a[i].v]] = a[i];
-		cnt[a[i].v] --;
-	}
-	
-	SET (cnt, 0);
-	FOR (i, 1, N) 
-		cnt[a[i].u] ++;
-		
-	FOR (i, 1, maxn - 1) cnt[i] += cnt[i - 1];
-	
-	FORD (i, N, 1) {
-		a[cnt[b[i].u]] = b[i];
-		cnt[b[i].u] --;
-	}
+#define MAXN 100005
+#define MAXLG 19
+
+
+char S[2*MAXN];
+int N,m,ln=0;
+int o[MAXLG][2*MAXN], t[2*MAXN][2];
+int A[2*MAXN], B[2*MAXN], C[2*MAXN], D[2*MAXN],id[MAXN],lj,ljj;
+
+void build()
+{
+    int i, j, jj, x, k;
+
+    N=strlen(S);
+
+    S[N] = '\0';
+
+    memset(A, 0, sizeof(A));
+    for (i = 0; i < N; ++i) A[(int)S[i]] = 1;
+    for (i = 1; i < 300; ++i) A[i] += A[i-1];
+    for (i = 0; i < N; ++i) o[0][i] = A[(int)S[i]];
+
+    for (j = 0, jj = 1, k = 0; jj < N ; ++j, jj <<= 1)
+    {
+
+        memset(A, 0, sizeof(A));
+        memset(B, 0, sizeof(B));
+
+        for (i = 0; i < N; ++i)
+            ++A[ t[i][0] = o[j][i] ], ++B[ t[i][1] = (i+jj<N) ? o[j][i+jj] : 0 ];
+
+        for (i = 1; i <= N; ++i)
+            A[i] += A[i-1], B[i] += B[i-1];
+
+        for (i = N-1; i >= 0; --i)
+            C[--B[t[i][1]]] = i;
+
+        for (i = N-1; i >= 0; --i)
+            D[--A[t[C[i]][0]]] = C[i];
+
+        o[j+1][D[0]] = k = 1;
+        for (i = 1; i < N; ++i)
+            o[j+1][D[i]] = (k += (t[D[i]][0] != t[D[i-1]][0] || t[D[i]][1] != t[D[i-1]][1]));
+
+    }
+
+    lj = j; ljj = jj;   
 }
 
-void makeSuffix() {//find the subffix array and lcp informationf of the string S, lenth N.
-	N++;
-	S[N] = '@';
-	
-	FOR (i, 1, N) 
-		pos[i][0] = S[i] + 1;
-		
-	FOR (step, 1, 18) {
-		FOR (i, 1, N) {
-			a[i].i = i;
-			a[i].u = pos[i][step - 1];
-			
-			if (i + (1 << (step - 1)) <= N) 
-				a[i].v = pos[i + (1 << (step - 1))][step - 1];
-			else a[i].v = 0;
-		}
-		
-		countingSort();
-		
-		pos[a[1].i][step] = 1;
-		
-		FOR (i, 2, N)
-			pos[a[i].i][step] = pos[a[i - 1].i][step] + 
-			( a[i].u != a[i - 1].u || a[i].v != a[i - 1].v);	
-	}
+int lcp(int x, int y)
+{
+    int k,j,jj, prf = 0;
+    
+    for (j = lj, jj = ljj; j >= 0; --j, jj >>= 1)
+        if (x<N && y<N && o[j][x] == o[j][y]) 
+        {
+            x   += jj;
+            y   += jj;
+            prf += jj;
+        }
+    return prf;
 }
 
-void makeLcp() {//prepare lcp information
-	FOR (i, 1, N - 1) {
-		int u = a[i].i;
-		int v = a[i + 1].i;
-		lcp[i] = 0;
-		
-		FORD (j, 18, 0) 
-			if (pos[u][j] == pos[v][j]) {
-				u += 1 << j;
-				v += 1 << j;
-				lcp[i] += 1 << j;
-			}
-	}
-	
-	lcp [N] = N - a[N].i + 1;
+void check_bf(LL K)
+{
+    int i,j;
+    vector<string> all;
+    string s=(string)S;
+
+    for(i=0;i<s.size();i++)
+        for(j=1;i+j-1<s.size();j++) all.pb(s.substr(i,j));
+            
+    sort(all.begin(),all.end());
+    printf("%d %s\n",all.size(),all[K-1].c_str());
 }
 
-long long callStr() {//calculate the number of different substring of S;
-	long long res = 0;
-	
-	makeSuffix();
-	makeLcp();
+int comm[100005];
 
-	FOR (i, 2, N)
-		res += N - a[i].i - lcp[i - 1];
-		
-	return res;
-}
+int main()
+{
+    int i,j,k,cs=0,tests;
+    LL K;
 
-int Left[maxn], Right[maxn];
+    
+        scanf("%s%I64d",S,&K);
 
-long long callCommonStr() {//calculate the commong substring
-//We will consider the suffix of the string A in the lexicographical order, with each suffix, we find how many prefixes of it are also sub-string of B (this can be done by concatenating two string and obtain the suffix array). However, some of these prefixes may be counted before (in the previous suffix of A), we can find this number based on the longest common prefix of two suffix.
+        build();
 
-	long long res = 0;
-	
-	makeSuffix();
-	makeLcp();
-	
-	//Left[i] is the longest common prefix of the suffix a[i] with the nearest suffix to the left a[j] that a[j].i <= N1 (it's belong to the string A).
-	
-	if (a[1].i <= N1) Left[1] = N1 - a[1].i + 1;
-	else Left[1] = 0;
-	
-	FOR (i, 2, N) 
-	if (a[i].i <= N1)
-		Left[i] = N1 - a[i].i + 1;
-		else Left[i] = min(Left[i - 1], lcp[i - 1]);
-	
-	
-	
-	//Right[i] is the longest common prefix of the suffix a[i] with the nearest suffix to the right a[j] that a[j].i <= N1 (it's belong to the string A).
-	if (a[N].i <= N1) Right[N] = N1 - a[N].i + 1;
-	else Right[N] = 0;
-	
-	FORD (i, N, 2) 
-	if (a[i].i <= N1)
-		Right[i] = N1 - a[i].i + 1;
-		else Right[i] = min(Right[i + 1], lcp[i]);
-		
-	FOR (i, 1, N) 
-	if (a[i].i > N1) {
-		int tmp = N, ok = -1;
-		FORD (j, i - 1, 1) {
-			tmp = min(tmp, lcp[j]);
-			if (a[j].i > N1) {
-				ok = 1;
-				break;
-			}
-		}
-		
-		int u = max(Left[i], Right[i]);
-		int v = (ok == -1)? 0: tmp;
-		if (v <= u) res += (u - v);
-	}
-	
-	return 2 * res;
-}
+        for(i=0;i<N;i++)
+            id[o[lj][i]]=i;
 
-int main() {
-	long long res = 0;
-	
-	gets(T1);
-	N1 = strlen(T1);
-	FORD (i, N1, 1)
-		T1[i] = T1[i - 1];
-	FOR (i, 1, N1) S[i] = T1[i];
-	N = N1;
-	
-	res += callStr();
-	
-	gets(T2);
-	N2 = strlen(T2);
-	FORD (i, N2, 1)
-		T2[i] = T2[i - 1];
-	FOR (i, 1, N2) S[i] = T2[i];
-	N = N2;
-	
-	res += callStr();
-	
-	
-	FOR (i, 1, N1) S[i] = T1[i];
-	S[N1 + 1] = '@' - 1;
-	
-	FOR (i, 1, N2) S[N1 + 1 + i] = T2[i];
-	N = N1 + N2 + 1;
-	
-	res -= callCommonStr();
-	
-	cout << res << endl;
-	
-	return 0;
+        LL t=(LL)N*(N+1)/2;
+        if(K>t) 
+        {
+            puts("No such line.");
+            return 0;
+        }
+    
+        LL dist=0;
+
+        for(i=2;i<=N;i++)
+            comm[i]=lcp(id[i],id[i-1]);
+
+        for(i=1;i<=N;i++)
+            dist+=N-id[i]-comm[i];
+
+
+        LL lo=1,hi=dist;
+
+        int ii=-1,ll=-1;
+
+        while(lo<=hi)
+        {
+            LL mid=(lo+hi)/2,tot=mid;
+            int l=-1,x;
+
+            for(i=1;i<=N;i++)
+            {
+                int len=N-id[i]-comm[i];
+            
+                if(tot-len<=0) 
+                {
+                    x=i;
+                    l=comm[i]+tot;
+                    break;
+                }
+                tot-=len;
+            }
+            
+
+            LL cnt=0;
+
+            for(i=1;i<=N;i++)
+            {
+                if(i<=x)
+                {
+                    if(i<x) cnt+=N-id[i];
+                    else cnt+=l;
+                    continue;
+                }
+
+                int lc=lcp(id[i],id[x]);
+                int add=MIN(lc,l);
+                cnt+=add;
+                if(!add) break;
+            }
+
+            if(cnt>=K)
+                ii=id[x],ll=l,hi=mid-1;
+            else
+                lo=mid+1;
+        }
+
+    
+
+        for(i=0;i<ll;i++)
+            printf("%c",S[ii+i]);
+        puts("");           
+
+    
+    return 0;
 }
