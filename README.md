@@ -10,5 +10,4 @@
 * [Suffix Array - TC](http://apps.topcoder.com/forums/?module=RevisionHistory&messageID=1171511)
 * [Suffix Array - Implementation](http://riteshkumarnitw.webs.com/mycoderepository.htm)
 * [Suffix Array - Quora](http://www.quora.com/Data-Structures/What-are-some-of-the-good-sources-to-understand-suffix-tree-and-its-implementation/answer/Ritesh-Kumar-Gupta)
-
 * [Game Theory Contest - IIT KANPUR](http://www.ahmed-aly.com/Contest.jsp?ID=9725)
