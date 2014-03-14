@@ -1,7 +1,5 @@
-
 // Code by SNIGGA :)
 // Complexity - 0(NlogN) -> logN improved with Counting Sort
-
 // LINK :- http://www.codechef.com/MARCH14/problems/SSTORY
 
 #include <bits/stdc++.h>
