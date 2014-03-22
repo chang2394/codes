@@ -22,7 +22,7 @@ bool vis[V];
 
 stack<int> order;
 // This stack stores the elemets in order of dfs traversal so that we can later use
-// it to find the sink vertex(leaf nodes) and construct our tree(SCC's) from there
+// it to find the sink vertex(leaf nodes) and construct our SCC's from there
 
 void init(){
     e = ie = 0;
@@ -54,7 +54,7 @@ void dfs1(int st){
 }
 
 void dfs2(int st){
-    //This dfs is to mark all the elements correspoding to a tree(SCC)
+    //This dfs is to mark all the elements correspoding to a SCC
     vis[st] = true;
     for(int i = invHead[st]; i != -1; i = invEdge[i].next){
         int to = invEdge[i].to;
