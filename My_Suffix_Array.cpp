@@ -38,10 +38,10 @@ void BuildSA(){
         for(int i = 1; i <= N; ++i)
             A[i] += A[i-1] , B[i] += B[i-1];
 
-        for(int i = 0; i < N; ++i)
+        for(int i = N-1; i >= 0; --i)
             C[--B[t[i][1]]] = i;
 
-        for(int i = 0; i < N; ++i)
+        for(int i = N-1; i >= 0; --i)
             D[--A[t[C[i]][0]]] = C[i];
 
         int k = od[stp][D[0]] = 1;
