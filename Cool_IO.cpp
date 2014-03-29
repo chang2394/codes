@@ -1,3 +1,4 @@
+//Link :- http://discuss.codechef.com/questions/6677/cool-fast-io-implementation
 #include <cstdio>
 #include <iostream>
 using std::string;
