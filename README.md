@@ -16,3 +16,6 @@
 
 ADVANCED DATA STRUCTURES :-
 * [MIT](http://courses.csail.mit.edu/6.851/spring12/lectures/)
+
+PROGRAMMING RESOURCES :-
+* [Smilitude](http://smilitude.wikispaces.com/Programming+Resources)
