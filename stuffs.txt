@@ -1,0 +1,169 @@
+GET STUFF FROM:
+
+e-maxx:
+http://e-maxx.ru/algo/
+translated:
+http://translate.google.com/translate?sl=auto&tl=en&js=n&prev=_t&hl=no&ie=UTF-8&u=http%3A%2F%2Fe-maxx.ru%2Falgo%2F
+
+topcoder editorials
+
+ARITHMETIC
+
+issquare
+issquarefree
+iscube
+ispower (also for bigint, find the significand as well)
+
+fast way to calculate issquare(n)
+
+http://stackoverflow.com/questions/295579/fastest-way-to-determine-if-an-integers-square-root-is-an-integer
+http://hansliten.wordpress.com/2010/07/31/faster-square-test/
+http://gmplib.org/manual/Perfect-Square-Algorithm.html#Perfect-Square-Algorithm
+
+BIGINT
+
+square root
+n-th root
+fast multiply
+
+COMBINATORICS
+
+generate all permutations
+generate all subsets
+generate all n-tuples
+generate all multisets
+generate all partitions
+generate all set partitions
+
+generate all subsets of submask
+
+return next/previous (combinatorial structure of some kind)
+- permutation, subset, n-tuple, partition, k-partition, k-subset, etc
+
+evaluate binomial
+evaluate multinomial
+
+lucas' theorem
+
+rank/unrank (combinatorial structure)
+- see next/previous
+
+COMPUTATIONAL-GEOMETRY
+
+ccw
+polygon-polygon intersection
+convex hull with collinear points in O(n log n)
+point in polygon that handles edge cases
+point in convex polygon in O(log N)
+distance from point to line, line segment, circle, polygon etc
+projection of point to line (2d), plane (3d)
+
+circle geometry http://en.wikipedia.org/wiki/Circle_segment
+
+DATA STRUCTURE
+
+- range minimum query in <O(n),O(log n)>, update O(log n), range update (as
+  fast as possible) http://wcipeg.com/wiki/Segment_tree
+- interval tree (to represent union of intervals)
+- range minimum query in <O(n),O(1)> http://wcipeg.com/wiki/RMQ
+- binomial heap
+- fibonacci heap
+- avl tree with order statistics
+- splay tree
+- aa tree
+- scapegoat tree
+- treap
+- b-tree?
+
+GRAPH
+
+- mincost maxflow with dijkstra (potensials)
+- maxflow with dinic's algorithm
+- bipartite matching with capacity >1 between each pairs such that
+  the array g[][]>1 (supporting multiple of each item on each side)
+- bipartite matching with edge weights=1, but where one of the sides can be
+  chosen >1 times, should be faster and should use less memory than
+  maxflow-tripartite
+- find bridge in graph: edge that splits graph if removed
+  https://secure.wikimedia.org/wikipedia/en/wiki/Bridge_%28graph_theory%29
+  http://translate.googleusercontent.com/translate_c?depth=1&hl=no&ie=UTF8&prev=_t&rurl=translate.google.com&sl=auto&tl=en&u=http://e-maxx.ru/algo/bridge_searching&usg=ALkJrhgctPzHPadiea0qQgM336GtlaWm-Q
+- find all k-articulation points or k-bridges: all k-tuples of (nodes, edges)
+  that disconnects the graph when removed
+- dilworth's theorem (minimum number of chains in a DAG or something like that)
+- kth shortest path
+- tarjan's scc
+- feasible flow (maxflow with min/max capacity per edge)
+- multicommodity flow
+- out-of-kilter algorithm (but only if it isn't dominated by mincost maxflow
+  with dijkstra)
+- proper polynomial-time mincost maxflow
+- dijkstra running in O(V log V+E) (is it of any use? consider another data
+  structure than heap, for example skip-list)
+- bron-kerbosch for max-clique: add vertex ordering
+- online algorithms in general are strongly desired!
+  - find articulation points (fast) in a graph where we add AND remove nodes
+    and edges
+
+MATRIX
+
+- matadd
+- determinant
+- inverse
+- gaussian elimination
+- gaussian elimination mod
+- for square matrix A, sum A^1+A^2+...+A^n (not hard to deduce, though)
+- faster algorithm for solving equation system mod, like block-wiedemann
+- special algorithm for solving equation system mod 2
+
+MISC
+
+- chess routines (move generator, detect check, checkmate, stalemate etc)
+
+NUMBER-THEORY
+
+- faster powmod, without init and ugly macros
+- upper bound for primtall nummer n: a(n) < n*(log n + log log n - 1/2) for n>=20
+- find continued fraction from arbitrary real number
+- solve pell equation
+- solve more general diophantine equations
+- black box factorization for huge numbers (tries a combination of appropriate
+  methods such as trial division, pollard rho, elliptic curve method,
+  quadratic sieve, number field sieve)
+- number-theoretic transform
+- cube root modulo prime http://stackoverflow.com/questions/6752374/cube-root-modulo-p-how-do-i-do-this
+
+NUMERIC
+
+- laguerre's (numerical) method of finding roots of a polynomial
+- robinson's recursion for solving "toeplitz" matrices
+- linear programming (simplex method)
+- linear programming (polynomial time method)
+- quadratic programming (active set)
+- discrete fourier transform O(N^2)
+- fast fourier transform O(N log N)
+- solve equation systems
+- find eigenvalues
+- least squares method
+
+PROBABILITY
+
+given n numbers, choose k unique numbers uniformly:
+http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+uniform random
+random from gaussian distribution (box muller)
+draw from other distributions
+
+SEARCH
+
+find kth number in array in linear time (order statistics)
+
+STRING
+
+- aho-corasick
+- given a string, calculate transition table[a][b]:
+  if we have matched to pos a and see char b, transition to position in table
+- suffix array
+
+OTHER
+
+take old c routines and fix them (or delete the useless ones)
