@@ -1,5 +1,5 @@
 //Code for spoj ORDERSET
-//Code for SNIGGA :)
+//Code By SNIGGA :)
 
 #include <bits/stdc++.h>
 using namespace std;
