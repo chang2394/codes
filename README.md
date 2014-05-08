@@ -19,3 +19,6 @@ ADVANCED DATA STRUCTURES :-
 
 PROGRAMMING RESOURCES :-
 * [Smilitude](http://smilitude.wikispaces.com/Programming+Resources)
+
+PRACTICE :-
+* [Quora answer Containing Resources](http://www.quora.com/What-are-some-good-contests-with-good-editorials-to-train-for-the-ACM-ICPC)
