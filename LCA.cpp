@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+/*** START OF TEMPLATE CODE ***/
 #define MAX (int)(5*1e4+2)
 #define LOG(num) (31 - __builtin_clz(num))
 typedef pair<int,int> pii;
