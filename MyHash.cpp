@@ -1,6 +1,7 @@
 // Implementedd Manacher's Algorithm using hashing
 // Complexity -> O(NlogN)
-// Checked on http://acm.timus.ru/problem.aspx?space=1&num=1297
+// Checked on :- http://acm.timus.ru/problem.aspx?space=1&num=1297
+// Reference :- http://codeforces.com/blog/entry/12145
 
 #include <bits/stdc++.h>
 using namespace std;
