@@ -13,7 +13,7 @@ int Len[2][MAX],st[2],en[2];
 int Max[2],beg[2];
 string str,s;
 
-// This code finds the Longest Palindrome
+// This code finds the Longest Palindrome using Manacher's Algorithm
 // WARNING :- For odd length, actual length of palindrome with center at i is (Len[1][i] + 1);
 // TRICK CASE :: string = "abcba" 
 // Even -> 0 , Odd -> 1
