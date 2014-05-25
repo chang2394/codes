@@ -1,3 +1,8 @@
+// Code for Manacher's Algorithm
+// Complexity - O(N)
+// Reference -> http://codeforces.com/blog/entry/12143
+// Checked on -> http://acm.timus.ru/problem.aspx?space=1&num=1297
+
 #include <bits/stdc++.h>
 #define DB(a) cerr << __LINE__ << ": " << #a << " = " << (a) << endl;
 
@@ -10,6 +15,7 @@ string str,s;
 
 // This code finds the Longest Palindrome
 // WARNING :- For odd length, actual length of palindrome with center at i is (Len[1][i] + 1);
+// TRICK CASE :: string = "abcba" 
 // Even -> 0 , Odd -> 1
 
 void solve(){
