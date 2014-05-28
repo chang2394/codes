@@ -25,6 +25,8 @@ void solve(){
 
     int L = 0, R = 0,k;
     for(int i = 1; i < N; ++i){
+        
+        // ***** START OF Z_VALUE CALCULATION *******
         k = i-L;
         if (i <= R and Z[k] < R-i+1)
             Z[i] = Z[k];
@@ -33,7 +35,8 @@ void solve(){
             while(R < N and str[R-L] == str[R]) ++R;
             Z[i] = R-L, --R;
         }
-
+	
+	// ******* END OF Z_VALUE CALCULATION ******** 
         if (Z[i]+i >= N) ++A[Z[i]], ++B[Z[i]-1],assert(A[Z[i]] <= 1);
         else ++B[Z[i]];
     }
