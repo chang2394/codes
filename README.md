@@ -12,7 +12,7 @@
 * [Suffix Array - Quora](http://www.quora.com/Data-Structures/What-are-some-of-the-good-sources-to-understand-suffix-tree-and-its-implementation/answer/Ritesh-Kumar-Gupta)
 * [Suffix Array - Codechef](http://discuss.codechef.com/questions/10147/suffix-trees)
 * [Game Theory Contest - IIT KANPUR](http://www.ahmed-aly.com/Contest.jsp?ID=9725)
-
+* [Hashing](http://www.partow.net/programming/hashfunctions)
 
 ADVANCED DATA STRUCTURES :-
 * [MIT](http://courses.csail.mit.edu/6.851/spring12/lectures/)
