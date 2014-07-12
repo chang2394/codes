@@ -1,4 +1,4 @@
-// Checked on :- http://lightoj.com/volume_showproblem.php?problem=1314
+//Checked on :- http://lightoj.com/volume_showproblem.php?problem=1314
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -41,18 +41,15 @@ void build_sa(int n){
     for(int h = 1 ; h < n; h <<= 1){
         int buckets = 0;
         for(int i = 0,j; i < n; i = j){
-            j = i+1;
-            while(j < n and !bh[j]) ++j;
+            rank[pos[i]] = i;
+            cnt[i] = 0;
+            for(j = i+1; j < n and !bh[j]; ++j)
+                rank[pos[j]] = i;
             next[i] = j;
             ++buckets;
         }
 
         if (buckets == n) break;
-        for(int i = 0; i < n; i = next[i]){
-            cnt[i] = 0;
-            for(int j = i; j < next[i]; ++j)
-                rank[pos[j]] = i;
-        }
 
         cnt[rank[n-h]]++;
         b2h[rank[n-h]] = true;
