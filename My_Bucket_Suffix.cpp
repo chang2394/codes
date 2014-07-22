@@ -1,5 +1,10 @@
 //Checked on :- http://lightoj.com/volume_showproblem.php?problem=1314
 
+/*
+   Input :- abracadabra0AbRa4Cad14abra
+   Sorted Suffix :- 11 20 16 21 12 17 14 25 10 15 22 7 0 3 18 5 13 23 8 1 4 19 6 24 9 2
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
