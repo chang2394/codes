@@ -1,18 +1,17 @@
-
-/*
-
 ICPC News :-
 
-Beijing, China Invitational
-http://acm.bnu.edu.cn/icpc/wp-content/uploads/2014/05/official.pdf
+-> Beijing, China Invitational
+   http://acm.bnu.edu.cn/icpc/wp-content/uploads/2014/05/official.pdf
 
-Bucharest Subregional
-http://acm.tju.edu.cn/toj/vcontest/contest9667.html
+-> Bucharest Subregional
+   http://acm.tju.edu.cn/toj/vcontest/contest9667.html
 
-Romania Iasi Subregional
-http://acm.tju.edu.cn/toj/vcontest/contest9673.html
+-> Romania Iasi Subregional
+   http://acm.tju.edu.cn/toj/vcontest/contest9673.html
 
-Chicago Qualifying Contest
-http://icpc.cs.uchicago.edu/tryouts2014/pset.html
+-> Chicago Qualifying Contest
+   http://icpc.cs.uchicago.edu/tryouts2014/pset.html
 
-*/
+
+        ____________________________________________________________________________
+        ____________________________________________________________________________
