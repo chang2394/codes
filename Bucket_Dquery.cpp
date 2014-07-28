@@ -1,4 +1,5 @@
 //Implementation of spoj DQUERY using BUCKET technique.
+// Link :- Editorial of problem http://codeforces.com/problemset/problem/375/D
 // Overall Complexity - O(Nsqrt(N))
 // :)
 
