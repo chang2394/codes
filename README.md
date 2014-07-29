@@ -1,4 +1,4 @@
---> These are some useful LINKS. 
+--> These are some useful Links :-  
 * [Competitive Programming - Steven & Felix Halim ](http://www.comp.nus.edu.sg/~stevenha/myteaching/competitive_programming/cp1.pdf)
 * [Spaghetti Source](http://www.prefield.com/algorithm/)
 * [E-MAXX](http://e-maxx.ru/)
@@ -19,6 +19,9 @@ ADVANCED DATA STRUCTURES :-
 
 PROGRAMMING RESOURCES :-
 * [Smilitude](http://smilitude.wikispaces.com/Programming+Resources)
+* [Igor's code repository](http://shygypsy.com/tools/) 
 
 PRACTICE :-
 * [Quora answer Containing Resources](http://www.quora.com/What-are-some-good-contests-with-good-editorials-to-train-for-the-ACM-ICPC)
+
+Note -> Use Igor's BigInt library.
