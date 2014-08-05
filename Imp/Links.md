@@ -1,4 +1,4 @@
---> `These are some useful Links` :-  
+`these are some useful Links`  
 * [competitive programming - steven and felix halim ](http://www.comp.nus.edu.sg/~stevenha/myteaching/competitive_programming/cp1.pdf)
 * [spaghetti source](http://www.prefield.com/algorithm/)
 * [e-maxx](http://e-maxx.ru/)
@@ -14,14 +14,14 @@
 * [game theory contest - iitk](http://www.ahmed-aly.com/Contest.jsp?ID=9725)
 * [hashing](http://www.partow.net/programming/hashfunctions)
 
-ADVANCED DATA STRUCTURES :-
+`advanced data structures` 
 * [mit](http://courses.csail.mit.edu/6.851/spring12/lectures/)
 
-PROGRAMMING RESOURCES :-
+`programming resources`
 * [smilitude](http://smilitude.wikispaces.com/Programming+Resources)
 * [igor's code repository](http://shygypsy.com/tools/) 
 
-PRACTICE :-
+`practice`
 * [quora answer containing resources](http://www.quora.com/What-are-some-good-contests-with-good-editorials-to-train-for-the-ACM-ICPC)
 
-Note -> Use Igor's BigInt library.
+Note : `use igor's bigint library`
