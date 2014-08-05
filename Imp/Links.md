@@ -1,7 +1,10 @@
 `these are some useful Links`  
   [competitive programming - steven and felix halim ](http://www.comp.nus.edu.sg/~stevenha/myteaching/competitive_programming/cp1.pdf)
+  
   [spaghetti source](http://www.prefield.com/algorithm/)
+  
   [e-maxx](http://e-maxx.ru/)
+  
   [stanford - competitive programming](http://www.stanford.edu/class/cs97si/)
   [peking university judge](http://poj.org/pastcontests)
   [coursera - game theory](https://class.coursera.org/cgt-002/wiki/syllabus)
