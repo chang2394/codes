@@ -6,14 +6,14 @@
 * [peking university judge](http://poj.org/pastcontests)
 * [coursera - game theory](https://class.coursera.org/cgt-002/wiki/syllabus)
 * [algorithm - maths](http://www.cut-the-knot.org/probability.shtml)
-* suffix array
+* [game theory contest - iitk](http://www.ahmed-aly.com/Contest.jsp?ID=9725)
+* [hashing](http://www.partow.net/programming/hashfunctions)
+* `suffix array`
   * [pdf](http://www.stanford.edu/class/cs97si/suffix-array.pdf)
   * [topcoder](http://apps.topcoder.com/forums/?module=RevisionHistory&messageID=1171511)
   * [implementation](http://riteshkumarnitw.webs.com/mycoderepository.htm)
   * [quora](http://www.quora.com/Data-Structures/What-are-some-of-the-good-sources-to-understand-suffix-tree-and-its-implementation/answer/Ritesh-Kumar-Gupta)
   * [codechef](http://discuss.codechef.com/questions/10147/suffix-trees)
-* [game theory contest - iitk](http://www.ahmed-aly.com/Contest.jsp?ID=9725)
-* [hashing](http://www.partow.net/programming/hashfunctions)
 
 `advanced data structures` 
 * [mit](http://courses.csail.mit.edu/6.851/spring12/lectures/)
