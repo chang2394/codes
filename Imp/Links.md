@@ -24,4 +24,4 @@
 `practice`
 * [quora answer containing resources](http://www.quora.com/What-are-some-good-contests-with-good-editorials-to-train-for-the-ACM-ICPC)
 
-Note : `use igor's bigint library`
+`note : use igor's bigint library`
