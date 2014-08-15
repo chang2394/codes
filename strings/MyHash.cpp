@@ -8,7 +8,7 @@ using namespace std;
 #define debug(arr,sz) for(int i = 0; i < sz; ++i) cerr << arr[i] << " "; cerr << endl;
 typedef long long LL;
 
-const LL base = 153LL;
+const LL base = 153LL; //other values for base :- 13331 
 const LL MOD = 1000000009LL;
 const int MAX = 112345;
 
