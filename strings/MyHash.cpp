@@ -9,7 +9,7 @@ using namespace std;
 typedef long long LL;
 
 const LL base = 153LL; //other values for base :- 13331 
-const LL MOD = 1000000009LL;
+const LL MOD = 1000000009LL; // other values :- 10^9 + 7 or use unsigned long long
 const int MAX = 112345;
 
 LL Hash[MAX],revHash[MAX],b[MAX];
