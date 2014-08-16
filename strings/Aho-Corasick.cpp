@@ -1,3 +1,10 @@
+/*  Code for Aho-Corasick String matching algo
+    Reference :- Reading -> http://translate.yandex.net/tr-url/ru-en.en/e-maxx.ru/algo/aho_corasick
+                 Code -> https://github.com/chang2394/algos/blob/master/Strings/Aho-Corasick.cpp
+    Complexity :- O(N + M1 + M2 + M3 ... + MK) (no of patterns = k)
+    Checked on :- http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1620
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -47,7 +54,9 @@ const int NN = MM*MM;
 struct node{
     int suff,par,word_no;
     char c;
+    // use of map instead of a[26] to reduce memory
     map<char,int> go;
+    
     node(){
         suff = -1, par = -1;
         word_no = -1;
@@ -76,6 +85,7 @@ void add_str(string &msg,int ind){
 
 int go(int k,char c);
 
+// suff determines the next maximum matching 
 int getLink(int no){
     if (trie[no].suff != -1)
         return trie[no].suff;
@@ -97,6 +107,7 @@ int go(int no,char ch){
     return (trie[no].go[ch] = go(nxt,ch));
 }
 
+// build function to compute the suff for each node
 void build(){
     queue<int> q;
     q.push(0);
