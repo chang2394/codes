@@ -1,5 +1,6 @@
 // Problem Link :-http://www.codechef.com/problems/FAVNUM
 // Algo's used :- digit dp, Aho-Corasick and binary search
+// Faster than the node version of Aho-Corasick :)
 
 #include <bits/stdc++.h>
 using namespace std;
