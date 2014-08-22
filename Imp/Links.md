@@ -13,8 +13,8 @@
   * [topcoder](http://apps.topcoder.com/forums/?module=RevisionHistory&messageID=1171511)
   * [implementation](http://riteshkumarnitw.webs.com/mycoderepository.htm)
   * [quora](http://www.quora.com/Data-Structures/What-are-some-of-the-good-sources-to-understand-suffix-tree-and-its-implementation/answer/Ritesh-Kumar-Gupta)
-  * [codechef](http://discuss.codechef.com/questions/10147/suffix-trees)
-
+  * [codechef suffix tree](http://discuss.codechef.com/questions/10147/suffix-trees)
+  * [codechef tutorials](http://discuss.codechef.com/questions/48877/data-structures-and-algorithms)
 `advanced data structures` 
 * [mit](http://courses.csail.mit.edu/6.851/spring12/lectures/)
 
