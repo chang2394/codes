@@ -100,7 +100,7 @@ int getLink(int no){
 int go(int no,char ch){
     if (trie[no].go.count(ch) > 0)
         return trie[no].go[ch];
-    if (trie[no].par == 0)
+    if (no == 0)
         return (trie[no].go[ch] = 0);
 
     int nxt = getLink(no);
