@@ -15,6 +15,7 @@
   * [quora](http://www.quora.com/Data-Structures/What-are-some-of-the-good-sources-to-understand-suffix-tree-and-its-implementation/answer/Ritesh-Kumar-Gupta)
   * [codechef suffix tree](http://discuss.codechef.com/questions/10147/suffix-trees)
   * [codechef tutorials](http://discuss.codechef.com/questions/48877/data-structures-and-algorithms)
+`
 `advanced data structures` 
 * [mit](http://courses.csail.mit.edu/6.851/spring12/lectures/)
 
