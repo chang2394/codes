@@ -78,6 +78,7 @@ void build_sa(int n){
             pos[rank[i]] = i, bh[i] |= b2h[i];
     }
 
+    // No actual need for this, just a precaution ;) 
     for(int i = 0; i < n; ++i)
         rank[pos[i]] = i;
 }
