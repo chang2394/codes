@@ -46,7 +46,7 @@ int head[NN], ptr[NN], myq[NN];
 int to[MM], nxt[MM], cap[MM], flow[MM];
 int dist[NN];
 
-int src, sink, n, m;
+int source, sink, n, m;
 int nEdges = 0;
 
 inline void init(){
@@ -63,8 +63,8 @@ inline void addEdge(int x,int y,int c){
 bool bfs(){
     memset(dist,-1,n*sizeof(int));
     int st = 0, en = 0;
-    dist[src] = 0;
-    myq[en++] = src;
+    dist[source] = 0;
+    myq[en++] = source;
 
     while(st < en){
         int x = myq[st++];
@@ -103,7 +103,7 @@ long long dinic(){
     while(bfs()){
         memcpy(ptr,head,n*sizeof(int));
         while(true){
-            int add = dfs(src,inf);
+            int add = dfs(source,inf);
             if (add > 0) ans += (long long)add;
             else break;
         }
@@ -114,7 +114,7 @@ long long dinic(){
 void solve(){
     init();
     cin >> n >> m;
-    src = 0, sink = n-1;
+    source = 0, sink = n-1;
 
     for(int i = 0; i < m; ++i){
         int a,b,c;
