@@ -98,7 +98,7 @@ int dfs(int x,int cflow){
     return 0;
 }
 
-long long dinic(){
+long long dinitz(){
     long long ans = 0;
     while(bfs()){
         memcpy(ptr,head,n*sizeof(int));
@@ -125,7 +125,7 @@ void solve(){
         addEdge(b,a,c);
     }
 
-    long long ans = dinic();
+    long long ans = dinitz();
     cout << ans << endl;
 }
 
