@@ -60,6 +60,11 @@ inline void addEdge(int x,int y,int c){
     head[x] = nEdges++;
 }
 
+inline void addEdge(int x,int y,int cp,int r_cp){
+    addEdge(x,y,cp);
+    addEdge(y,x,r_cp);
+}
+
 bool bfs(){
     memset(dist,-1,n*sizeof(int));
     int st = 0, en = 0;
