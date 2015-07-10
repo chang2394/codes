@@ -3,6 +3,7 @@
     Tested on - http://www.spoj.com/problems/FASTFLOW/
     Code Reference - http://zobayer.blogspot.in/2010/05/maximum-flow-dinitz-algorithm.html
     Reference - http://www.cs.cmu.edu/~15451/lectures/lec11/dinic.pdf
+              - http://www.cs.cmu.edu/~15451/lectures/lec11/max-flow2-avrim.pdf
 **/
 
 #include <bits/stdc++.h>
