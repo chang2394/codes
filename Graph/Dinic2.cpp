@@ -67,10 +67,10 @@ typedef vector<int> vi;
 
 const int inf = 0x7fffffff;
 const int ND = 212;
-const int MD = 21234;
+const int ED = 21234;
 
 int head[ND], ptr[ND], mq[ND];
-int to[MD], flow[MD], cap[MD], nxt[MD];
+int to[ED], flow[ED], cap[ED], nxt[ED];
 int dist[ND];
 
 int source,sink,n,m;
