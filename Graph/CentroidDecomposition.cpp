@@ -7,7 +7,6 @@
  * @author chang
  */
 
-
 #include <cstdio>
 #include <iostream>
 #include <cassert>
@@ -31,7 +30,16 @@
 
 using namespace std;
 
+#define INF 1000000007
+
+typedef long long ll;
 typedef vector<int> vi;
+typedef vector<double> vd;
+typedef vector<ll> vll;
+typedef vector<vector<int> > vvi;
+typedef pair<int, int> ii;
+typedef vector<pair<int, int> > vii;
+typedef vector<vector<pair<int, int> > > vvii;
 
 
 #define TRACE
@@ -82,22 +90,115 @@ ostream &operator<<(ostream &out, const multimap<T, U> &a) {
   return out;
 }
 
+#define tracea(a, n) cerr<<#a<<" : ";for(int i=0;i<n;++i)cerr<<a[i]<<" ";cerr<<endl;
+#define traceaa(a, n, m) cerr<<#a<<" : "<<endl;for(int i=0;i<n;++i){for(int j=0;j<m;++j)cerr<<a[i][j]<<" ";cerr<<endl;}
+#define trace(...) __f(#__VA_ARGS__, __VA_ARGS__)
+
+template<typename Arg1>
+void __f(const char *name, Arg1 &&arg1) {
+  cerr << name << " : " << arg1 << std::endl;
+}
+
+template<typename Arg1, typename... Args>
+void __f(const char *names, Arg1 &&arg1, Args &&... args) {
+  const char *comma = strchr(names + 1, ',');
+  cerr.write(names, comma - names) << " : " << arg1 << " | ";
+  __f(comma + 1, args...);
+}
+
 #else
 #define trace(...)
 #define tracea(a,n)
 #define traceaa(a,n,m)
 #endif
 
+#define all(x) (x).begin(), (x).end()
+#define nall(x) (x).rbegin(), (x).rend()
+#define sz(a) int((a).size())
+#define boost ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0)
 #define pb push_back
+#define rz resize
+#define mp make_pair
+#define F first
+#define S second
+#define FOR(i, a, b) for(int i=(a);i<=(b);++i)
+#define NFOR(i, a, b) for(int i=(a);i>=(b);--i)
+#define TCASE(in) int __T;in>>__T;FOR(Tc,1,__T)
+#define ass(n, l, r) assert(n>=l and n<=r)
+#define outprefix(tc) "Case #" << tc << ":"
 
+inline int add(int a, int b, int m = INF) {
+  a += b;
+  if (a >= m)a -= m;
+  return a;
+}
+
+inline int mul(int a, int b, int m = INF) { return (int) (((ll) a * (ll) b) % m); }
+
+inline int scan() {
+  int x;
+  scanf("%d", &x);
+  return x;
+}
+
+int dx[]{-1, 0, 1, 0, 1, 1, -1, -1};
+int dy[]{0, -1, 0, 1, 1, -1, 1, -1};
+
+const double PI = 3.14159265358979323846L;
 const int oo = numeric_limits<int>::max() / 2 - 10;
+const double eps = 1e-6;
+const long long mod = 1000000007;
 
 const int ND = 1e5 + 10;
 const int MD = 20;
 
+class CentroidDecompostion {
+public:
+  int *_tcentroid_parent;
+  int *_tchilds;
+
+  CentroidDecompostion() { }
+
+  int compute_size_subtree(int cur_node, int cur_parent, vi edges[]) {
+    int ans = 1;
+    for (auto y: edges[cur_node]) {
+      if (_tcentroid_parent[y] != -1 or y == cur_parent) continue;
+      ans += compute_size_subtree(y, cur_node, edges);
+    }
+    _tchilds[cur_node] = ans;
+    return ans;
+  }
+
+  void decompose_tree(int cur_node, int cur_parent, int no_nodes, int prev_centroid, vi edges[]) {
+    for (auto y: edges[cur_node]) {
+      if (y == cur_parent or _tcentroid_parent[y] != -1) continue;
+      if (2 * _tchilds[y] > no_nodes) {
+        decompose_tree(y, cur_node, no_nodes, prev_centroid, edges);
+        return;
+      }
+    }
+
+    _tcentroid_parent[cur_node] = prev_centroid;
+    for (auto y: edges[cur_node]) {
+      if (_tcentroid_parent[y] != -1) continue;
+      compute_size_subtree(y, -1, edges);
+      decompose_tree(y, -1, _tchilds[y], cur_node, edges);
+    }
+  }
+
+  int *init(int start, int n, vi edges[]) {
+    _tcentroid_parent = new int[n + 10];
+    _tchilds = new int[n + 10];
+
+    memset(_tcentroid_parent, -1, sizeof(_tcentroid_parent) * (n + 10));
+    compute_size_subtree(start, -1, edges);
+    decompose_tree(start, -1, _tchilds[start], -2, edges);
+    return _tcentroid_parent;
+  }
+};
+
 vi edges[ND];
-int centroid_parent[ND];
-int childs[ND];
+int *centroid_parent;
 
 int in_time[ND], out_time[ND];
 int log_parent[MD][ND];
@@ -107,42 +208,6 @@ int min_distance[ND];
 
 class XeniaAndTree {
 public:
-  // centroid decomposition util start
-  int compute_size_subtree(int cur_node, int cur_parent) {
-    int ans = 1;
-    for (auto y: edges[cur_node]) {
-      if (centroid_parent[y] != -1 or y == cur_parent) continue;
-      ans += compute_size_subtree(y, cur_node);
-    }
-    childs[cur_node] = ans;
-    return ans;
-  }
-
-  void decompose_tree(int cur_node, int cur_parent, int no_nodes, int prev_centroid) {
-    for (auto y: edges[cur_node]) {
-      if (y == cur_parent or centroid_parent[y] != -1) continue;
-      if (2 * childs[y] > no_nodes) {
-        decompose_tree(y, cur_node, no_nodes, prev_centroid);
-        return;
-      }
-    }
-
-    centroid_parent[cur_node] = prev_centroid;
-    for (auto y: edges[cur_node]) {
-      if (centroid_parent[y] != -1) continue;
-      compute_size_subtree(y, -1);
-      decompose_tree(y, -1, childs[y], cur_node);
-    }
-  }
-
-  void init(int start) {
-    memset(centroid_parent, -1, sizeof(centroid_parent));
-    compute_size_subtree(start, -1);
-    decompose_tree(start, -1, childs[start], -2);
-  }
-
-  // centroid decomposition util end
-
   bool is_parent(int x, int y) {
     return ((in_time[x] <= in_time[y]) and (out_time[x] >= out_time[y]));
   }
@@ -214,8 +279,7 @@ public:
     }
 
     int root = 1;
-    init(root);
-
+    centroid_parent = CentroidDecompostion().init(root, n, edges);
     lca_precompute(root, -1, 0);
 
     for (int i = 1; i <= n; ++i)
@@ -243,3 +307,4 @@ int main() {
   solver.solve(in, out);
   return 0;
 }
+
